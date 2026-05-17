@@ -18,11 +18,13 @@ jobs:
    steps:     
      # Workflow contexts
      - name: Show run info
+       working-directory: .  # katalog lab11 nie istnieje przed checkoutem
        run: |
          echo "SHA: ${{ github.sha }}"
          echo "Run ID: ${{ github.run_id }}"
 
      - name: Show region
+       working-directory: .
        run: echo "Deploying to ${{ env.AWS_REGION }}"
      
      - name: Checkout code repo
